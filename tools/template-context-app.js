@@ -32,6 +32,9 @@ function appSettings(settings) {
   if (settings.oauthClientId) {
     result.oauthClientId = settings.oauthClientId;
   }
+  if (settings.tagProviderUrl) {
+    result.tagProviderUrl = settings.tagProviderUrl;
+  }
   return result;
 }
 

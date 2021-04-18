@@ -24,6 +24,9 @@ function extensionSettings(settings) {
   if (settings.googleAnalytics) {
     result.googleAnalytics = settings.googleAnalytics;
   }
+  if (settings.tagProviderUrl) {
+    result.tagProviderUrl = settings.tagProviderUrl;
+  }
   return result;
 }
 
