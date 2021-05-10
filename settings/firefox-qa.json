@@ -13,5 +13,7 @@
   "googleAnalytics": "UA-26026798-6",
 
   "browserIsFirefox": true,
-  "appType": "firefox-extension"
+  "appType": "firefox-extension",
+
+  "tagProviderUrl": "https://concept-tagger.insiderintelligence.com"
 }

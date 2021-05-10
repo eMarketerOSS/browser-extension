@@ -17,5 +17,5 @@
   "browserIsChrome": true,
   "appType": "chrome-extension",
 
-  "tagProviderUrl": "https://concept-tagger.development.insiderintelligence.com"
+  "tagProviderUrl": "https://concept-tagger.insiderintelligence.com"
 }

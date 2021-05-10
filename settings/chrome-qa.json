@@ -14,5 +14,7 @@
   "googleAnalytics": "UA-26026798-6",
 
   "browserIsChrome": true,
-  "appType": "chrome-extension"
+  "appType": "chrome-extension",
+
+  "tagProviderUrl": "https://concept-tagger.insiderintelligence.com"
 }
