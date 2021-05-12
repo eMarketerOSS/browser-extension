@@ -17,5 +17,6 @@
   "browserIsChrome": true,
   "appType": "chrome-extension",
 
-  "tagProviderUrl": "https://concept-tagger.insiderintelligence.com"
+  "tagProviderUrl": "https://concept-tagger.insiderintelligence.com",
+  "usernameUrl": "https://search-int.emarketer.com/?refinementList[user_id]="
 }
