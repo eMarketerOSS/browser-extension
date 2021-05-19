@@ -35,6 +35,15 @@ function appSettings(settings) {
   if (settings.tagProviderUrl) {
     result.tagProviderUrl = settings.tagProviderUrl;
   }
+  if (settings.usernameUrl) {
+    result.usernameUrl = settings.usernameUrl;
+  }
+  if (settings.groupnameUrl) {
+    result.groupnameUrl = settings.groupnameUrl;
+  }
+  if (settings.tagnameUrl) {
+    result.tagnameUrl = settings.tagnameUrl;
+  }
   return result;
 }
 
