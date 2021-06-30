@@ -1,5 +1,6 @@
 import settings from './settings';
 import { BadgeUriError } from './errors';
+import normalizeUrl from 'normalize-url';
 
 const ALLOWED_PROTOCOLS = new Set(['http:', 'https:']);
 
@@ -10,6 +11,23 @@ const BLOCKED_HOSTNAMES = new Set([
   'www.facebook.com',
   'mail.google.com',
 ]);
+
+// The following sites need custom normalization
+const CUSTOM_URI_NORMALIZERS = [
+  {
+    match: hostname => hostname.includes('.sharepoint.com'),
+    normalize: uri => normalizeUrl(uri, {
+      sortQueryParameters: true,
+      removeQueryParameters: ['e', 'p', 'q', 'originalPath', 'parentview'],
+      stripAuthentication: true,
+      stripHash: true,
+      forceHttps: true,
+      stripWWW: true,
+      removeTrailingSlash: true,
+      removeSingleSlash: true,
+    })
+  }
+];
 
 /** encodeUriQuery encodes a string for use in a query parameter */
 function encodeUriQuery(val) {
@@ -39,6 +57,11 @@ export function uriForBadgeRequest(uri) {
 
   if (BLOCKED_HOSTNAMES.has(url.hostname)) {
     throw new BadgeUriError('Blocked hostname');
+  }
+
+  const customNormalizer = CUSTOM_URI_NORMALIZERS.find(normalizer => normalizer.match(url.hostname));
+  if (customNormalizer) {
+    return customNormalizer.normalize(url.toString());
   }
 
   url.hash = '';
