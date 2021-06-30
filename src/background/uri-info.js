@@ -12,7 +12,7 @@ const BLOCKED_HOSTNAMES = new Set([
   'mail.google.com',
 ]);
 
-// The following sites need custom normalization
+// The following sites need custom uri normalization
 const CUSTOM_URI_NORMALIZERS = [
   {
     match: hostname => hostname.includes('.sharepoint.com'),
